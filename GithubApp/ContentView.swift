@@ -9,63 +9,111 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        HStack {
-            Rectangle()
-                .frame(width: 105, height: 120)
-                .cornerRadius(12)
+        VStack {
+            HStack{
+                Rectangle()
+                    .frame(width: 105, height: 120)
+                    .cornerRadius(12)
+                
+                VStack (alignment: .leading, spacing: 4) {
+                    
+                    
+                    Text("Horacio Mota")
+                        .font(.headline)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.primary)
+                    
+                    Text("Mobile developer  -  Swift, TDD, CoreDATA")
+                        .font(.subheadline)
+                        .fontWeight(.medium)
+                        .foregroundColor(.secondary)
+                        .padding(.bottom)
+                    
+                    HStack (spacing: 12) {
+                        
+                        VStack {
+                            Text("Repositories")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+                            
+                            Text("50")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                        }
+                        
+                        VStack {
+                            
+                            Text("Followers")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+
+                            
+                            Text("10k")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                      
+                        }
+                        
+                        VStack {
+                            
+                            Text("Following")
+                                .font(.subheadline)
+                                .foregroundColor(.secondary)
+
+                            
+                            Text("20k")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                            
+                        }
+                        
+                    }
+
+                }
+                
+                
+            }
+            //list of repositories
             
             VStack (alignment: .leading) {
                 
+                Button {
+                    
+                } label: {
+                    Text("Follow")
+                }
+                .font(.headline)
+                .foregroundColor(.white)
+                .padding(.horizontal, 20)
+                .padding(.vertical, 15)
+                .frame(maxWidth: .infinity)
+                .background(Color.blue)
+                .cornerRadius(10)
                 
-                Text("Horacio Mota")
+                
+                Text("Popular")
                     .font(.headline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(.primary)
+                    .fontWeight(.bold)
                 
-                Text("Mobile developer  -  Swift")
+                Text("Based on the popularity of repository")
                     .font(.subheadline)
-                    .fontWeight(.medium)
                     .foregroundColor(.secondary)
-                    .padding(.bottom)
                 
-                HStack (spacing: 12) {
+                //Repository card
+                
+                HStack {
+                    Rectangle()
+                        .frame(width: 50, height: 50)
+                        .cornerRadius(12)
                     
                     VStack {
-                        Text("50")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        
-                        Text("Repositories")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    VStack {
-                        Text("10k")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        
-                        Text("Followers")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                    VStack {
-                        Text("20k")
-                            .font(.headline)
-                            .fontWeight(.bold)
-                        
-                        Text("Following")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                        Text("Disney")
                     }
                     
                 }
-                .cornerRadius(12)
-
+                
             }
-            
-            
+
         }.padding()
     
     }

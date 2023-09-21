@@ -19,6 +19,7 @@
 		83ADBA572ABCD1A000D4313D /* basicInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */; };
 		83ADBA592ABCD6F600D4313D /* followersInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA582ABCD6F600D4313D /* followersInfoData.swift */; };
 		83ADBA5B2ABCDB3500D4313D /* repositoryInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA5A2ABCDB3500D4313D /* repositoryInfoData.swift */; };
+		83ADBA5D2ABCDBB900D4313D /* repositoryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA5C2ABCDBB900D4313D /* repositoryInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicInfoModal.swift; sourceTree = "<group>"; };
 		83ADBA582ABCD6F600D4313D /* followersInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followersInfoData.swift; sourceTree = "<group>"; };
 		83ADBA5A2ABCDB3500D4313D /* repositoryInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repositoryInfoData.swift; sourceTree = "<group>"; };
+		83ADBA5C2ABCDBB900D4313D /* repositoryInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repositoryInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 			children = (
 				83ADBA4E2ABCB70E00D4313D /* basicInfoManager.swift */,
 				83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */,
+				83ADBA5C2ABCDBB900D4313D /* repositoryInfoModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 				83ADBA592ABCD6F600D4313D /* followersInfoData.swift in Sources */,
 				83ADBA522ABCCF1500D4313D /* followButton.swift in Sources */,
 				83ADBA4F2ABCB70E00D4313D /* basicInfoManager.swift in Sources */,
+				83ADBA5D2ABCDBB900D4313D /* repositoryInfoModel.swift in Sources */,
 				83ADBA572ABCD1A000D4313D /* basicInfoModal.swift in Sources */,
 				83ADBA3C2ABB4FEB00D4313D /* ContentView.swift in Sources */,
 				83ADBA4D2ABCB54700D4313D /* ProfileBioView.swift in Sources */,

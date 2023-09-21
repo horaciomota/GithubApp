@@ -9,91 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var basicinfo:basicGithubInfo
-    
+    @EnvironmentObject var basicInfoManager: BasicInfoManager
+
     var body: some View {
         VStack {
-            HStack{
-                
-                AsyncImage(url: URL(string: basicinfo.avatar_url)) { avatar in
-                    if let image = avatar.image {
-                        
-                        image
-                            .resizable()
-                            .scaledToFit()
-                            .frame(height: 120)
-                            .cornerRadius(12)
-
-                    }
-                    else {
-                        Rectangle()
-                            .frame(width: 105, height: 120)
-                            .cornerRadius(12)
-                    }
-                }
-                
-           
-                
-                VStack (alignment: .leading, spacing: 4) {
-                    
-                    
-                    Text(basicinfo.name)
-                        .font(.headline)
-                        .fontWeight(.semibold)
-                        .foregroundColor(.primary)
-                    
-                    Text(basicinfo.bio)
-                        .font(.subheadline)
-                        .fontWeight(.medium)
-                        .foregroundColor(.secondary)
-                        .padding(.bottom)
-                        .multilineTextAlignment(.leading)
-                    
-                    HStack (spacing: 12) {
-                        
-                        VStack {
-                            Text("Repositories")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-                            
-                            Text(String(basicinfo.public_repos))
-                                .font(.headline)
-                                .fontWeight(.bold)
-                        }
-                        
-                        VStack {
-                            
-                            Text("Followers")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-
-                            
-                            Text(String(basicinfo.followers))
-                                .font(.headline)
-                                .fontWeight(.bold)
-                      
-                        }
-                        
-                        VStack {
-                            
-                            Text("Following")
-                                .font(.subheadline)
-                                .foregroundColor(.secondary)
-
-                            
-                            Text(String(basicinfo.following))
-                                .font(.headline)
-                                .fontWeight(.bold)
-                            
-                        }
-                        
-                    }
-
-                }
-                
-                
-            }
-            .frame(maxHeight: 100)
+            ProfileBioView()
             //list of repositories
             
             VStack (alignment: .leading) {
@@ -171,7 +91,7 @@ struct ContentView: View {
         }.padding()
             .task {
                 do {
-                    basicinfo = try await getBasicData()
+                    basicInfoManager.basicinfo = try await getBasicData()
                 }catch {
                     print("Something went wrong with your data, error: \(error)")
                 }
@@ -202,9 +122,15 @@ struct basicGithubInfo: Codable, Identifiable {
 
 
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(basicinfo: basicGithubInfo(id: 1, name: "MockName", bio: "",followers: 2, following: 2, public_repos: 12, avatar_url: "MockImgUrl"))
+        // Crie uma instância simulada de BasicInfoManager para o preview
+        let basicInfoManager = BasicInfoManager()
+        
+        return ContentView()
+            .environmentObject(basicInfoManager)
     }
 }
+
+
+

@@ -11,7 +11,6 @@ import SwiftUI
 struct GithubAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
-        }
+            ContentView(basicinfo: basicGithubInfo(id: 1, name: "MockName", bio: "",followers: 2, following: 2, public_repos: 12, avatar_url: "MockImgUrl"))     }
     }
 }

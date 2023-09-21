@@ -8,26 +8,46 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var basicinfo:basicGithubInfo
+    
     var body: some View {
         VStack {
             HStack{
-                Rectangle()
-                    .frame(width: 105, height: 120)
-                    .cornerRadius(12)
+                
+                AsyncImage(url: URL(string: basicinfo.avatar_url)) { avatar in
+                    if let image = avatar.image {
+                        
+                        image
+                            .resizable()
+                            .scaledToFit()
+                            .frame(height: 120)
+                            .cornerRadius(12)
+
+                    }
+                    else {
+                        Rectangle()
+                            .frame(width: 105, height: 120)
+                            .cornerRadius(12)
+                    }
+                }
+                
+           
                 
                 VStack (alignment: .leading, spacing: 4) {
                     
                     
-                    Text("Horacio Mota")
+                    Text(basicinfo.name)
                         .font(.headline)
                         .fontWeight(.semibold)
                         .foregroundColor(.primary)
                     
-                    Text("Mobile developer  -  Swift, TDD, CoreDATA")
+                    Text(basicinfo.bio)
                         .font(.subheadline)
                         .fontWeight(.medium)
                         .foregroundColor(.secondary)
                         .padding(.bottom)
+                        .multilineTextAlignment(.leading)
                     
                     HStack (spacing: 12) {
                         
@@ -36,7 +56,7 @@ struct ContentView: View {
                                 .font(.subheadline)
                                 .foregroundColor(.secondary)
                             
-                            Text("50")
+                            Text(String(basicinfo.public_repos))
                                 .font(.headline)
                                 .fontWeight(.bold)
                         }
@@ -48,7 +68,7 @@ struct ContentView: View {
                                 .foregroundColor(.secondary)
 
                             
-                            Text("10k")
+                            Text(String(basicinfo.followers))
                                 .font(.headline)
                                 .fontWeight(.bold)
                       
@@ -61,7 +81,7 @@ struct ContentView: View {
                                 .foregroundColor(.secondary)
 
                             
-                            Text("20k")
+                            Text(String(basicinfo.following))
                                 .font(.headline)
                                 .fontWeight(.bold)
                             
@@ -112,6 +132,7 @@ struct ContentView: View {
                     
                     VStack (alignment: .leading, spacing: 8) {
                         
+                        
                         Text("DisneyPlus-Swift-App ")
                                 .font(.headline)
                                 .fontWeight(.bold)
@@ -148,12 +169,56 @@ struct ContentView: View {
             .padding(.top, 8)
 
         }.padding()
+            .task {
+                do {
+                    basicinfo = try await getBasicData()
+                }catch {
+                    print("Something went wrong with your data, error: \(error)")
+                }
+            }
     
     }
+    
+    func getBasicData() async throws -> basicGithubInfo {
+        
+        guard let baseUrl = URL(string: "https://api.github.com/users/horaciomota") else {
+            print("Ops... Check your URL")
+            throw URLError(.badURL)
+        }
+        
+        let (data, _) = try await URLSession.shared.data(from: baseUrl)
+        print("Fetching data...")
+        
+        let basicInfoResponse = try JSONDecoder().decode(
+            basicGithubInfo.self, from: data )
+                
+        return basicInfoResponse
+    }
+    
+    
 }
+
+
+struct basicGithubInfo: Codable, Identifiable {
+    
+    let id: Int
+    let name: String
+    let bio: String
+    let followers: Int
+    let following: Int
+    let public_repos: Int
+    let avatar_url: String
+    
+}
+
+
+
+
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(basicinfo: basicGithubInfo(id: 1, name: "MockName", bio: "",followers: 2, following: 2, public_repos: 12, avatar_url: "MockImgUrl"))
     }
 }

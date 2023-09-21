@@ -11,6 +11,8 @@ struct repositoryCell: View {
     
     @EnvironmentObject var basicInfoManager: BasicInfoManager
     
+    @State var repositories: repositoryInfo = []
+    
     var body: some View {
 
 
@@ -62,6 +64,13 @@ struct repositoryCell: View {
                     .multilineTextAlignment(.leading)
             }
             
+        }
+        .task {
+            do {
+                repositories = try await repositoryInfoData()
+            }catch {
+                print("Something wrong with your data, check error: \(error)")
+            }
         }
         .frame(maxHeight: 100)
         .padding(.top, 8)

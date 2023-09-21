@@ -9,7 +9,15 @@ import Foundation
 
 func repositoryInfoData() async throws -> [repositoryInfo] {
     
+    guard let baseurl = URL(string: "https://api.github.com/users/horaciomota/repos") else {
+        print("Something wrong with your URL")
+        throw URLError(.badURL)
+    }
     
+    let (data, _) = try await URLSession.shared.data(from: baseurl)
+    
+    let repositoryDataResponse = try JSONDecoder().decode([repositoryInfo].self, from: data)
+    return repositoryDataResponse
     
     
 }

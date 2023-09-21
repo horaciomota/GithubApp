@@ -179,21 +179,7 @@ struct ContentView: View {
     
     }
     
-    func getBasicData() async throws -> basicGithubInfo {
-        
-        guard let baseUrl = URL(string: "https://api.github.com/users/horaciomota") else {
-            print("Ops... Check your URL")
-            throw URLError(.badURL)
-        }
-        
-        let (data, _) = try await URLSession.shared.data(from: baseUrl)
-        print("Fetching data...")
-        
-        let basicInfoResponse = try JSONDecoder().decode(
-            basicGithubInfo.self, from: data )
-                
-        return basicInfoResponse
-    }
+
     
     
 }

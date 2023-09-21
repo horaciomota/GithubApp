@@ -11,6 +11,7 @@
 		83ADBA3C2ABB4FEB00D4313D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA3B2ABB4FEB00D4313D /* ContentView.swift */; };
 		83ADBA3E2ABB4FEE00D4313D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83ADBA3D2ABB4FEE00D4313D /* Assets.xcassets */; };
 		83ADBA412ABB4FEE00D4313D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83ADBA402ABB4FEE00D4313D /* Preview Assets.xcassets */; };
+		83ADBA4A2ABCB29800D4313D /* BasicInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA492ABCB29800D4313D /* BasicInfoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		83ADBA3B2ABB4FEB00D4313D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		83ADBA3D2ABB4FEE00D4313D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		83ADBA402ABB4FEE00D4313D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		83ADBA492ABCB29800D4313D /* BasicInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 		83ADBA382ABB4FEB00D4313D /* GithubApp */ = {
 			isa = PBXGroup;
 			children = (
+				83ADBA472ABCB25700D4313D /* Networking */,
 				83ADBA392ABB4FEB00D4313D /* GithubAppApp.swift */,
 				83ADBA3B2ABB4FEB00D4313D /* ContentView.swift */,
 				83ADBA3D2ABB4FEE00D4313D /* Assets.xcassets */,
@@ -65,6 +68,14 @@
 				83ADBA402ABB4FEE00D4313D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		83ADBA472ABCB25700D4313D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				83ADBA492ABCB29800D4313D /* BasicInfoData.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				83ADBA3C2ABB4FEB00D4313D /* ContentView.swift in Sources */,
+				83ADBA4A2ABCB29800D4313D /* BasicInfoData.swift in Sources */,
 				83ADBA3A2ABB4FEB00D4313D /* GithubAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

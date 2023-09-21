@@ -16,6 +16,7 @@
 		83ADBA4F2ABCB70E00D4313D /* basicInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA4E2ABCB70E00D4313D /* basicInfoManager.swift */; };
 		83ADBA522ABCCF1500D4313D /* followButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA512ABCCF1500D4313D /* followButton.swift */; };
 		83ADBA542ABCCF6F00D4313D /* repositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA532ABCCF6F00D4313D /* repositoryCell.swift */; };
+		83ADBA572ABCD1A000D4313D /* basicInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		83ADBA4E2ABCB70E00D4313D /* basicInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicInfoManager.swift; sourceTree = "<group>"; };
 		83ADBA512ABCCF1500D4313D /* followButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followButton.swift; sourceTree = "<group>"; };
 		83ADBA532ABCCF6F00D4313D /* repositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repositoryCell.swift; sourceTree = "<group>"; };
+		83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicInfoModal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 		83ADBA382ABB4FEB00D4313D /* GithubApp */ = {
 			isa = PBXGroup;
 			children = (
+				83ADBA552ABCD18600D4313D /* Model */,
 				83ADBA502ABCCF0200D4313D /* Components */,
 				83ADBA4B2ABCB52D00D4313D /* Views */,
 				83ADBA472ABCB25700D4313D /* Networking */,
@@ -104,6 +107,14 @@
 				83ADBA532ABCCF6F00D4313D /* repositoryCell.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		83ADBA552ABCD18600D4313D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,6 +189,7 @@
 			files = (
 				83ADBA522ABCCF1500D4313D /* followButton.swift in Sources */,
 				83ADBA4F2ABCB70E00D4313D /* basicInfoManager.swift in Sources */,
+				83ADBA572ABCD1A000D4313D /* basicInfoModal.swift in Sources */,
 				83ADBA3C2ABB4FEB00D4313D /* ContentView.swift in Sources */,
 				83ADBA4D2ABCB54700D4313D /* ProfileBioView.swift in Sources */,
 				83ADBA542ABCCF6F00D4313D /* repositoryCell.swift in Sources */,

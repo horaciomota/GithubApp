@@ -14,12 +14,14 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ProfileBioView()
+
             //list of repositories
-            
             VStack (alignment: .leading) {
                 
+                //Follow button component
                 followButton()
                 
+                //Repository component
                 repositoryCell()
                 
                 Spacer()
@@ -38,27 +40,7 @@ struct ContentView: View {
     
     }
     
-
-    
-    
 }
-
-
-struct basicGithubInfo: Codable, Identifiable {
-    
-    let id: Int
-    let name: String
-    let bio: String
-    let followers: Int
-    let following: Int
-    let public_repos: Int
-    let avatar_url: String
-    
-}
-
-
-
-
 
 
 struct ContentView_Previews: PreviewProvider {

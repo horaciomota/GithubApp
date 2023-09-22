@@ -11,6 +11,6 @@ struct repositoryInfo: Decodable, Identifiable {
     
     let id: Int
     let name: String
-    let description: String
+    let description: String?
     
 }

@@ -15,7 +15,7 @@ func getBasicData() async throws -> basicGithubInfo {
     }
     
     let (data, _) = try await URLSession.shared.data(from: baseUrl)
-    print("Fetching data...")
+    print("Fetching BasicData...200")
     
     let basicInfoResponse = try JSONDecoder().decode(
         basicGithubInfo.self, from: data )

@@ -15,7 +15,7 @@ func repositoryInfoData() async throws -> [repositoryInfo] {
     }
     
     let (data, _) = try await URLSession.shared.data(from: baseurl)
-    print("Fetching your repositories")
+    print("Fetching your repositories...200")
 
     
     let repositoryDataResponse = try JSONDecoder().decode([repositoryInfo].self, from: data)

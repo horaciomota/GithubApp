@@ -60,7 +60,7 @@ struct repositoryCell: View {
                                     .font(.subheadline)
                             }
                             
-                            Text(repository.description ?? "Non-descripted repository")
+                            Text(repository.description ?? "his repository serves as a centralized hub for a multifaceted project. It encompasses a diverse range of code, resources, and documentation that collectively contribute to the project's objectives. Dive into the repository's contents to discover everything from source code and configurations to documentation and related assets. ...")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                                 .multilineTextAlignment(.leading)

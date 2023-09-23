@@ -51,13 +51,13 @@ struct repositoryCell: View {
                                 Image(systemName: "circle.fill")
                                     .foregroundColor(Color.red)
                                 
-                                Text("Swift")
+                                Text(repository.language ?? "Null")
                                     .font(.subheadline)
                                 
                                 Image(systemName: "star.fill")
                                     .foregroundColor(Color.yellow)
                                 
-                                Text("3")
+                                Text(String(repository.stargazers_count))
                                     .font(.subheadline)
                             }
                             

@@ -10,33 +10,37 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var basicInfoManager: BasicInfoManager
+    
+    @State private var search = ""
 
     var body: some View {
-        VStack {
-            ProfileBioView()
-
-            //list of repositories
-            VStack (alignment: .leading) {
+        NavigationStack {
+            VStack {
+                ProfileBioView()
                 
-                //Follow button component
-                followButton()
-                
-                //Repository component
-                repositoryCell()
-                
-                Spacer()
-                
-            }
-            .padding(.top, 8)
-
-        }.padding()
-            .task {
-                do {
-                    basicInfoManager.basicinfo = try await getBasicData()
-                }catch {
-                    print("Something went wrong with your data, error: \(error)")
+                //list of repositories
+                VStack (alignment: .leading) {
+                    
+                    //Follow button component
+                    followButton()
+                    
+                    //Repository component
+                    repositoryCell()
+                    
+                    Spacer()
+                    
                 }
+                .padding(.top, 8)
+
+            }.padding()
+                .task {
+                    do {
+                        basicInfoManager.basicinfo = try await getBasicData()
+                    }catch {
+                        print("Something went wrong with your data, error: \(error)")
+                    }
             }
+        }.searchable(text: $search)
     
     }
     

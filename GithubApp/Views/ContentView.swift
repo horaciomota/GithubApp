@@ -40,12 +40,40 @@ struct ContentView: View {
                         print("Something went wrong with your data, error: \(error)")
                     }
             }
-        }.searchable(text: $search)
-    
+        }.searchable(text: $search) {
+            Button("Search Followers") {
+                searchGithubUser()
+            }
+        }
     }
     
-}
+    func searchGithubUser() {
+        Task {
+            do {
+                guard let baseUrl = URL(string: "https://api.github.com/users/\(search)") else {
+                    print("Ops... Check your URL")
+                    return
+                }
 
+                let (data, _) = try await URLSession.shared.data(from: baseUrl)
+                print("Fetching Followers Data...")
+                
+                let userResponse = try JSONDecoder().decode(basicGithubInfo.self, from: data)
+                // Use os dados dos seguidores conforme necessário
+                
+                if let userName = userResponse.bio {
+                                // Faça algo com o nome do usuário (userName)
+                                print("User Name: \(userName)")
+                            } else {
+                                print("User Name not found in response.")
+                            }
+                
+            } catch {
+                print("Error: \(error)")
+            }
+        }
+    }
+}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
@@ -56,7 +84,3 @@ struct ContentView_Previews: PreviewProvider {
             .environmentObject(basicInfoManager)
     }
 }
-
-
-
-

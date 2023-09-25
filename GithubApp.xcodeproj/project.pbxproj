@@ -17,7 +17,7 @@
 		83ADBA522ABCCF1500D4313D /* followButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA512ABCCF1500D4313D /* followButton.swift */; };
 		83ADBA542ABCCF6F00D4313D /* repositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA532ABCCF6F00D4313D /* repositoryCell.swift */; };
 		83ADBA572ABCD1A000D4313D /* basicInfoModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */; };
-		83ADBA592ABCD6F600D4313D /* followersInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA582ABCD6F600D4313D /* followersInfoData.swift */; };
+		83ADBA592ABCD6F600D4313D /* searchGithubUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA582ABCD6F600D4313D /* searchGithubUser.swift */; };
 		83ADBA5B2ABCDB3500D4313D /* repositoryInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA5A2ABCDB3500D4313D /* repositoryInfoData.swift */; };
 		83ADBA5D2ABCDBB900D4313D /* repositoryInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83ADBA5C2ABCDBB900D4313D /* repositoryInfoModel.swift */; };
 /* End PBXBuildFile section */
@@ -34,7 +34,7 @@
 		83ADBA512ABCCF1500D4313D /* followButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followButton.swift; sourceTree = "<group>"; };
 		83ADBA532ABCCF6F00D4313D /* repositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repositoryCell.swift; sourceTree = "<group>"; };
 		83ADBA562ABCD1A000D4313D /* basicInfoModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = basicInfoModal.swift; sourceTree = "<group>"; };
-		83ADBA582ABCD6F600D4313D /* followersInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = followersInfoData.swift; sourceTree = "<group>"; };
+		83ADBA582ABCD6F600D4313D /* searchGithubUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchGithubUser.swift; sourceTree = "<group>"; };
 		83ADBA5A2ABCDB3500D4313D /* repositoryInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repositoryInfoData.swift; sourceTree = "<group>"; };
 		83ADBA5C2ABCDBB900D4313D /* repositoryInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = repositoryInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,7 +91,7 @@
 			isa = PBXGroup;
 			children = (
 				83ADBA492ABCB29800D4313D /* basicInfoData.swift */,
-				83ADBA582ABCD6F600D4313D /* followersInfoData.swift */,
+				83ADBA582ABCD6F600D4313D /* searchGithubUser.swift */,
 				83ADBA5A2ABCDB3500D4313D /* repositoryInfoData.swift */,
 			);
 			path = Networking;
@@ -196,7 +196,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83ADBA592ABCD6F600D4313D /* followersInfoData.swift in Sources */,
+				83ADBA592ABCD6F600D4313D /* searchGithubUser.swift in Sources */,
 				83ADBA522ABCCF1500D4313D /* followButton.swift in Sources */,
 				83ADBA4F2ABCB70E00D4313D /* basicInfoManager.swift in Sources */,
 				83ADBA5D2ABCDBB900D4313D /* repositoryInfoModel.swift in Sources */,

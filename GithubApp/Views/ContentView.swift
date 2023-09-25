@@ -15,7 +15,8 @@ struct AppSettings {
 struct ContentView: View {
     
     @EnvironmentObject var basicInfoManager: BasicInfoManager
-    @State var searchText: String = AppSettings.search
+    @State var searchText: String = ""
+
     
     var body: some View {
         NavigationStack {
@@ -46,7 +47,7 @@ struct ContentView: View {
                 }
         }.searchable(text: $searchText) {
             Button("Search Followers") {
-                searchGithubUser(searchText: "")
+                searchGithubUser(searchText: searchText)
             }
         }
     }

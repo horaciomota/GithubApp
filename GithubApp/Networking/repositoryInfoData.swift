@@ -9,7 +9,7 @@ import Foundation
 
 func repositoryInfoData() async throws -> [repositoryInfo] {
     
-    guard let baseurl = URL(string: "https://api.github.com/users/horaciomota/repos") else {
+    guard let baseurl = URL(string: "https://api.github.com/users/moraesjeremias/repos") else {
         print("Something wrong with your URL")
         throw URLError(.badURL)
     }

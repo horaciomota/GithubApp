@@ -9,7 +9,7 @@ import Foundation
 
 func getBasicData() async throws -> basicGithubInfo {
     
-    guard let baseUrl = URL(string: "https://api.github.com/users/horaciomota") else {
+    guard let baseUrl = URL(string: "https://api.github.com/users/moraesjeremias") else {
         print("Ops... Check your URL")
         throw URLError(.badURL)
     }
